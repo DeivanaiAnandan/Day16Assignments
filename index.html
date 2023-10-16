@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+            background-color:aqua;
+        }
+    div{
+        width:500px;
+        height:500px;
+        background-color:blue;
+        margin: 0 auto;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        font-size: 30px;
+    }
+    h1{
+        text-align:center;
+    }
+    @media only screen and (max-width: 600px) {
+  div {
+    font-size: 15px;
+    width:200px;
+    height:200px;
+
+  }
+}
+    </style>
+</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <div id = "main"></div>
+    <script>
+        function foo(time){
+        const display = document.getElementById("main");
+        
+        if(time>0){
+        setTimeout(function (){
+            foo(time-1);
+        },1000);
+            display.innerHTML = time;
+        }
+        else{
+            display.innerHTML = "Happy Independence Day"
+        }}
+        
+        foo(10);
+    </script>
+</body>
+</html>
